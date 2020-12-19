@@ -1,0 +1,105 @@
+﻿@{
+    ViewData["Title"] = "Cadastro";
+
+}
+
+@model Cliente
+<!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
+<div>
+    <h1 id="titulo">Cadastro de Clientes</h1>
+    <br>
+</div>
+
+<!-- Início do formulário -->
+<form asp-controller="Cadastro" asp-action="cadastrocliente">
+    <table>
+        <tr>
+            <td>
+                Código:
+                <div class="campo">
+                    <input type="text" name="id" id="id" asp-for="@Model.Id" readonly>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Nome</label>
+                <div class="campo">
+                    <input type="text" name="nome" id="nome" asp-for="@Model.Nome">
+                </div>
+
+            </td>
+            <td>
+                Sobrenome:
+                <div class="campo">
+                    <input type="text" name="sobrenome" id="sobrenome" asp-for="@Model.SobreNome">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+                Sexo:
+                <div class="campo">
+                    <input type="text" name="sexo" id="sexo" asp-for="@Model.Sexo">
+                </div>
+            </td>
+            <td>
+
+                CPF:
+                <div class="campo">
+                    <input type="text" name="cpf" id="cpf" asp-for="@Model.CPF">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+
+                Telefone:
+                <div class="campo">
+                    <input type="text" name="telefone" id="telefone" asp-for="@Model.Telefone">
+                </div>
+
+            </td>
+            <td>
+
+                Celular:
+                <div class="campo">
+                    <input type="text" name="celular" id="celular" asp-for="@Model.Celular">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                CEP:
+                <div class="campo">
+                    <input type="text" name="cep" id="cep" asp-for="@Model.CEP">
+                </div>
+            </td>
+            <td>
+                Endereço:
+                <div class="campo">
+                    <input type="text" name="endereco" id="endereco" asp-for="@Model.Endereco">
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                Número:
+                <div class="campo">
+                    <input type="text" name="numero" id="numero" asp-for="@Model.Numero">
+                </div>
+            </td>
+        </tr>
+        <tr></tr>
+        <tr>
+            <td>
+                <button class="botao" type="submit" onsubmit="">Concluído</button>
+            </td>
+        </tr>
+    </table>
+</form>

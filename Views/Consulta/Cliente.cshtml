@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Consulta";
+
+}
+
+@model List<Cliente>
+
+
+    <style>
+        
+        table, h1{
+            margin-left: 10px;
+        }
+        
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px 10px;
+        }
+
+        th{
+            background-color: rgb(21,4,98);
+            color: white;
+        }
+
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /*Ímpares*/
+        table tr:nth-child(odd){
+            background-color: #ddd;
+        }
+        /*Pares*/
+        table tr:nth-child(even) {
+            background-color: white;
+        }
+
+    </style>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<div>
+    <h1 id="titulo">Consulta de Clientes</h1>
+    <br>
+    <table>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>SobreNome</th>
+            <th>Sexo</th>
+            <th>CPF</th>
+        </tr>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.Id</td>
+                <td>@cliente.Nome</td>
+                <td>@cliente.SobreNome</td>
+                <td>@cliente.Sexo</td>
+                <td>@cliente.CPF</td>
+                <td>                
+                    <a asp-controller="Cadastro" asp-action="Cliente" asp-route-id="@cliente.Id">
+                        <i class='far fa-newspaper' style='font-size:24px'></i>
+                    </a>
+                </td>
+
+            </tr>
+        }
+    </table>
+</div>

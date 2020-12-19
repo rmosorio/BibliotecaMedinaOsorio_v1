@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sistema de Biblioteca</title>    
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="/Home/Index">Home</a></li>
+        <li>
+            <a href="#">Cadastros</a>
+            <ul>
+                <li><a href="#">Cadastro de Autores</a></li>
+                <li><a href="#">Cadastro de Livros</a></li>
+                <li><a href="/Cadastro/Cliente">Cadastro de Clientes</a></li>
+                <li><a href="#">Cadastro de Funcionários</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Consultas</a>
+            <ul>
+                <li><a href="#">Consulta de Autores</a></li>
+                <li><a href="#">Consulta de Livros</a></li>
+                <li><a href="/Consulta/Cliente">Consulta de Clientes</a></li>
+                <li><a href="#">Consulta de Funcionários</a></li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="#">Aluguel</a>
+            <ul>
+                <li><a href="#">Alugar Livro</a></li>
+                <li><a href="#">Lista de livros alugados</a></li>
+                <li><a href="#">Lista de aluguéis atrasados</a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+    @RenderBody()
+
+    
+<footer>
+    <hr />
+    <p>&copy; 2020 - Sistema de Biblioteca</p>
+</footer>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
