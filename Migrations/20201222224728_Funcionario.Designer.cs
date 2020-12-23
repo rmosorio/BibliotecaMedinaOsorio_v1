@@ -4,14 +4,16 @@ using BibliotecaMedinaOsorio_v1;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BibliotecaMedinaOsorio_v1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20201222224728_Funcionario")]
+    partial class Funcionario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -148,7 +150,7 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<int>("Numero")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PerfilId")
+                    b.Property<int>("PerfilId")
                         .HasColumnType("int");
 
                     b.Property<string>("Senha")
@@ -291,7 +293,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     b.HasOne("BibliotecaMedinaOsorio_v1.Models.Perfil", "Perfil")
                         .WithMany("Funcionarios")
-                        .HasForeignKey("PerfilId");
+                        .HasForeignKey("PerfilId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Perfil");
                 });

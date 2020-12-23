@@ -13,7 +13,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -27,14 +29,16 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SobreNome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Sexo = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     CPF = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Celular = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CEP = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Endereco = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Numero = table.Column<int>(type: "int", nullable: false)
+                    Numero = table.Column<int>(type: "int", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,7 +51,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -60,7 +66,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -75,7 +83,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AutorId = table.Column<int>(type: "int", nullable: false),
-                    GeneroId = table.Column<int>(type: "int", nullable: false)
+                    GeneroId = table.Column<int>(type: "int", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -101,7 +111,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PerfilId = table.Column<int>(type: "int", nullable: false)
+                    PerfilId = table.Column<int>(type: "int", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -121,7 +133,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FuncionarioId = table.Column<int>(type: "int", nullable: false),
-                    ClienteId = table.Column<int>(type: "int", nullable: false)
+                    ClienteId = table.Column<int>(type: "int", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -146,7 +160,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     Id_Aluguel = table.Column<int>(type: "int", nullable: false),
                     Id_Livro = table.Column<int>(type: "int", nullable: false),
-                    DataDevolucao = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    DataDevolucao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataAtualizacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCadastro = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

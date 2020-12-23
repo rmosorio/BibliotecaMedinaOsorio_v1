@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BibliotecaMedinaOsorio_v1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20201219001510_Incluindo Data")]
-    partial class IncluindoData
+    [Migration("20201222223642_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -92,6 +92,9 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<DateTime>("DataCadastro")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Endereco")
                         .HasColumnType("nvarchar(max)");
 
@@ -104,9 +107,6 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<string>("Sexo")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
-
-                    b.Property<string>("SobreNome")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");

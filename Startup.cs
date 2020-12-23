@@ -29,6 +29,9 @@ namespace BibliotecaMedinaOsorio_v1
                 options.UseSqlServer(connectionString));
 
             services.AddTransient<IClienteRepository, ClienteRepository>();
+            services.AddTransient<IFuncionarioRepository, FuncionarioRepository>();
+            services.AddTransient<IAutorRepository, AutorRepository>();
+            services.AddTransient<ILivroRepository, LivroRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

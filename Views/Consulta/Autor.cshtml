@@ -3,7 +3,7 @@
 
 }
 
-@model List<Cliente>
+@model List<Autor>
 
 
     <style>
@@ -42,24 +42,20 @@
     </style>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <div>
-    <h1 id="titulo">Consulta de Clientes</h1>
+    <h1 id="titulo">Consulta de Autores</h1>
     <br>
     <table>
         <tr>
             <th>Código</th>
             <th>Nome</th>
-            <th>Sexo</th>
-            <th>CPF</th>
         </tr>
-        @foreach (var cliente in Model)
+        @foreach (var autor in Model)
         {
             <tr>
-                <td>@cliente.Id</td>
-                <td>@cliente.Nome</td>
-                <td>@cliente.Sexo</td>
-                <td>@cliente.CPF</td>
+                <td>@autor.Id</td>
+                <td>@autor.Nome</td>
                 <td>                
-                    <a asp-controller="Cadastro" asp-action="Cliente" asp-route-id="@cliente.Id">
+                    <a asp-controller="Cadastro" asp-action="Autor" asp-route-id="@autor.Id">
                         <i class='far fa-newspaper' style='font-size:24px'></i>
                     </a>
                 </td>

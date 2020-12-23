@@ -3,15 +3,15 @@
 
 }
 
-@model Cliente
+@model Funcionario
 <!-- Cabeçalho com título e subtítulo (ambos com css de id "titulo") -->
 <div>
-    <h1 id="titulo">Cadastro de Clientes</h1>
+    <h1 id="titulo">Cadastro de Funcionários</h1>
     <br>
 </div>
 
 <!-- Início do formulário -->
-<form asp-controller="Cadastro" asp-action="cadastrocliente">
+<form asp-controller="Cadastro" asp-action="cadastrofuncionario">
     <table>
         <tr>
             <td>
@@ -96,6 +96,22 @@
                 </div>
             </td>
         </tr>
+
+        <tr>
+            <td>
+                Usuário:
+                <div class="campo">
+                    <input type="text" name="usuario" id="usuario" asp-for="@Model.Usuario">
+                </div>
+            </td>
+            <td>
+                Senha:
+                <div class="campo">
+                    <input type="text" name="senha" id="senha" asp-for="@Model.Senha">
+                </div>
+            </td>
+        </tr>
+
         <tr></tr>
         <tr>
             <td>

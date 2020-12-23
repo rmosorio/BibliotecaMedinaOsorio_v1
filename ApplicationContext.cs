@@ -45,7 +45,7 @@ namespace BibliotecaMedinaOsorio_v1
             modelBuilder.Entity<Funcionario>().HasKey(t => t.Id);
             modelBuilder.Entity<Funcionario>().Property(t => t.Id).ValueGeneratedOnAdd();
             modelBuilder.Entity<Funcionario>().HasMany(t => t.Alugueis).WithOne(t => t.Funcionario);
-            modelBuilder.Entity<Funcionario>().HasOne(t => t.Perfil).WithMany(t => t.Funcionarios).IsRequired();
+            modelBuilder.Entity<Funcionario>().HasOne(t => t.Perfil).WithMany(t => t.Funcionarios);
 
             modelBuilder.Entity<Perfil>().HasKey(t => t.Id);
             modelBuilder.Entity<Perfil>().Property(t => t.Id).ValueGeneratedOnAdd();

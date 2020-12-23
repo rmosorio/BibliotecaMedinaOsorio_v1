@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BibliotecaMedinaOsorio_v1.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20201217020455_Inicial")]
-    partial class Inicial
+    [Migration("20201222230639_obrigatoriedade perfil no func")]
+    partial class obrigatoriedadeperfilnofunc
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,6 +31,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<int>("ClienteId")
                         .HasColumnType("int");
 
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("FuncionarioId")
                         .HasColumnType("int");
 
@@ -49,6 +55,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -74,6 +86,15 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<string>("Celular")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Endereco")
                         .HasColumnType("nvarchar(max)");
 
@@ -86,9 +107,6 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                     b.Property<string>("Sexo")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
-
-                    b.Property<string>("SobreNome")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Telefone")
                         .HasColumnType("nvarchar(max)");
@@ -105,11 +123,48 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<string>("CEP")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CPF")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Celular")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Endereco")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PerfilId")
+                    b.Property<int>("Numero")
                         .HasColumnType("int");
+
+                    b.Property<int?>("PerfilId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Sexo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Usuario")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -124,6 +179,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -140,6 +201,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
 
                     b.Property<int>("Id_Livro")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataDevolucao")
                         .HasColumnType("datetime2");
@@ -160,6 +227,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
 
                     b.Property<int>("AutorId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("GeneroId")
                         .HasColumnType("int");
@@ -182,6 +255,12 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
+
+                    b.Property<DateTime>("DataAtualizacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -214,9 +293,7 @@ namespace BibliotecaMedinaOsorio_v1.Migrations
                 {
                     b.HasOne("BibliotecaMedinaOsorio_v1.Models.Perfil", "Perfil")
                         .WithMany("Funcionarios")
-                        .HasForeignKey("PerfilId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PerfilId");
 
                     b.Navigation("Perfil");
                 });
